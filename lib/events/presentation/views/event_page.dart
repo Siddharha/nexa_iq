@@ -4,8 +4,10 @@ class EventPage extends StatelessWidget {
   const EventPage({super.key});
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Event Page", style: TextStyle(color: Colors.white, fontSize: 24)),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Events"),
+      ),
     );
   }
 }
