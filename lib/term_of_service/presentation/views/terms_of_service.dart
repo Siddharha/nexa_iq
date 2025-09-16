@@ -20,36 +20,39 @@ class TermsOfServicePage extends ConsumerWidget {
           ],
         ),
       ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-           color: const Color(0xff032531),
-           height: 110,
-          child: Column(
-            children: [
-              Divider(),
-              CheckboxListTile(
-              title: const Text(
-                "I accept the terms and conditions of the Soterix System Terms of Service",
-                style: TextStyle(color: Colors.white, fontSize: 14),
+      bottomNavigationBar: SizedBox(
+        height: 200,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+             color: const Color(0xff032531),
+            
+            child: Column(
+              children: [
+                Divider(),
+                CheckboxListTile(
+                title: const Text(
+                  "I accept the terms and conditions of the Soterix System Terms of Service",
+                  style: TextStyle(color: Colors.white, fontSize: 14),
+                ),
+                value: true,
+                activeColor: Colors.white, // color when checked
+                checkColor: Colors.black, // tick color
+                onChanged: (bool? value) {},
+                controlAffinity: ListTileControlAffinity.leading,
               ),
-              value: true,
-              activeColor: Colors.white, // color when checked
-              checkColor: Colors.black, // tick color
-              onChanged: (bool? value) {},
-              controlAffinity: ListTileControlAffinity.leading,
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: (){
+                    if(context.mounted){
+                      context.go('/landing');
+                    }
+                  }, 
+                  child: Text("Submit")),
+              )
+              ],
             ),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: (){
-                  if(context.mounted){
-                    context.go('/landing');
-                  }
-                }, 
-                child: Text("Submit")),
-            )
-            ],
           ),
         ),
       ),
