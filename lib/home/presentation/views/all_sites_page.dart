@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class AllSitesPage extends StatelessWidget {
   const AllSitesPage({super.key});
@@ -13,6 +14,11 @@ class AllSitesPage extends StatelessWidget {
           return ListTile(
             title: Text("Test", style: TextStyle(color: Colors.white),),
             trailing: Icon(Icons.keyboard_arrow_right),
+            onTap: (){
+              if(context.mounted){
+                context.push("/landing/site");
+              }
+            },
             );
       },
       separatorBuilder: (context, index) {

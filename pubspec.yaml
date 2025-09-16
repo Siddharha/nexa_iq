@@ -51,6 +51,7 @@ dependencies:
 
   # Routing
   go_router: ^14.1.0
+  video_player: ^2.10.0
 
 dev_dependencies:
   flutter_test:
