@@ -10,7 +10,7 @@ final videoPlayerControllerProvider =
     FutureProvider<VideoPlayerController>((ref) async {
   final controller = VideoPlayerController.networkUrl(Uri.parse(hlsUrl));
   await controller.initialize();
-  //controller.play();
-  //controller.setLooping(true);
+  controller.play();
+  controller.setLooping(true);
   return controller;
 });
